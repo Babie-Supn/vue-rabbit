@@ -5,9 +5,6 @@
 <template>
   <!-- 一级路由出口组件 -->
   <RouterView />
-  <div class="test">
-    test textColor
-  </div>
 </template>
 
 <style scoped lang="scss">

@@ -1,5 +1,3 @@
-import "./assets/main.css";
-
 import { createApp } from "vue";
 import { createPinia } from "pinia";
 //引入初始化样式
