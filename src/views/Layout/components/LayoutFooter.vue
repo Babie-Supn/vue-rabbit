@@ -7,17 +7,17 @@ name:'LayoutFooter'
       <div class="container">
         <dl>
           <dt>客户服务</dt>
-          <dd><i></i>在线客服</dd>
-          <dd><i></i>问题反馈</dd>
+          <dd><i class="iconfont icon-kefu"></i>在线客服</dd>
+          <dd><i class="iconfont icon-wentifankui"></i>问题反馈</dd>
         </dl>
         <dl>
           <dt>关注我们</dt>
-          <dd><i></i>公众号</dd>
-          <dd><i></i>微博</dd>
+          <dd><i class="iconfont icon-wechat"></i> 公众号</dd>
+          <dd><i class="iconfont icon-weibo1"></i>微博</dd>
         </dl>
         <dl>
           <dt>下载APP</dt>
-          <dd class="qrcode"><img src="" alt=""></dd>
+          <dd class="qrcode"><img src="@/assets/img/code.png" ></dd>
           <dd class="download">
             <span>扫描二维码</span>
             <span>立即下载App</span>
@@ -34,15 +34,15 @@ name:'LayoutFooter'
       <div class="container">
         <div class="slogan">
           <a href="javascript:;">
-            <i class="iconfont icon-footer01"></i>
+            <i class="iconfont icon-shouye"></i>
             <span>价格亲民</span>
           </a>
           <a href="javascript:;">
-            <i class="iconfont icon-footer02"></i>
+            <i class="iconfont icon-wuliu"></i>
             <span>物流快捷</span>
           </a>
           <a href="javascript:;">
-            <i class="iconfont icon-footer03"></i>
+            <i class="iconfont icon-icon"></i>
             <span>品质新鲜</span>
           </a>
         </div>

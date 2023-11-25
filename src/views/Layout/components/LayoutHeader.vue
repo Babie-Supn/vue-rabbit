@@ -75,7 +75,6 @@
         height: 32px;
         display: inline-block;
         color: #ff7686df;
-  
         &:hover {
           color: $xtxColor;
           border-bottom: 1px solid $xtxColor;
