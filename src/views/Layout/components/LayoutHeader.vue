@@ -27,7 +27,7 @@ onMounted(() => {
     
     </ul>
     <div class="search">
-      <i></i>
+      <i class="iconfont icon-sousuo" ></i>
       <input type="text" placeholder="搜一搜">
     </div>
     <!-- 头部购物车 -->
@@ -38,9 +38,11 @@ onMounted(() => {
 <style lang="scss" scoped>
 
 .app-header {
-  background:  #fee7e796;
+  background-color:  #fee7e796;
+  height: 132px;
 
   .container {
+    padding-top: 50px;
     display: flex;
     align-items: center;
   }

@@ -30,18 +30,18 @@
 <style scoped lang="scss">
 .app-topnav{
   width: 100%;
-  height: 80px;
+  height: 65px;
   background-color: #ff7686df;
 }
 .container{
   
   right: 0px;
-  height: 80px;
+  height: 65px;
 
 }
 .container ul{
   float: right; 
-  padding-top: 35px;
+  padding-top: 22.5px;
 }
 .container li{
   float: left;
