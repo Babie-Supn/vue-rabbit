@@ -13,3 +13,11 @@ export const getNewAPI = () => {
     url: "/home/new",
   });
 };
+
+//获取人气好物
+
+export const getHotAPI = () => {
+  return httpInstance({
+    url: "/home/hot",
+  });
+};
