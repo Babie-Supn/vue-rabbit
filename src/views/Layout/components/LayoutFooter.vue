@@ -170,7 +170,7 @@ name:'LayoutFooter'
   }
 
   .extra {
-    background-color:#333333f5;
+    background-color:$footerColor;
   }
 
   .slogan {

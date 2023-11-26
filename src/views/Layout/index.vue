@@ -4,18 +4,8 @@
     <LayoutNav/>
     <LayoutHeader/>
         <!-- 二级路由出口 -->
-        <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>hhh
-    <br><br><br><br><br>
     <RouterView />
+    
     <LayoutFooter />
 
   
@@ -36,7 +26,8 @@ import { onMounted } from "vue"
 const categoryStore = useCategoryStore()
 
 onMounted(() => 
-categoryStore.getCategory()
+  categoryStore.getCategory(),
+  console.log(categoryStore)
 )
 
 </script>
