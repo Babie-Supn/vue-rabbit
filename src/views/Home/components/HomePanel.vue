@@ -18,19 +18,19 @@ defineProps({
     <div class="container">
       <div class="head">
         <!-- 主标题和副标题 -->
-        <h3>{{ title }}<small>{{ subTitle }}</small></h3>
-        <div >
-          <!-- 主体内容 -->
-          <slot ></slot>
-        </div>
+        <h3>
+          {{ title }}<small>{{ subTitle }}</small>
+        </h3>
       </div>
+      <!-- 主体内容区域 -->
+      <slot  />
     </div>
   </div>
 </template>
 
 <style scoped lang="scss">
 .home-panel {
-  background-color: #fff;
+  background-color: $bodyColor;
 
   .head {
     padding: 40px 0;
@@ -38,12 +38,15 @@ defineProps({
     align-items: flex-end;
 
     h3 {
+      // position:absolute;
+      // top:40px;
       flex: 1;
       font-size: 32px;
       font-weight: normal;
       margin-left: 6px;
       height: 35px;
       line-height: 35px;
+      
 
       small {
         font-size: 16px;
