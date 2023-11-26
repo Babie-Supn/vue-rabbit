@@ -1,18 +1,3 @@
-<template>
-  <div>
-    <LayoutFixed />
-    <LayoutNav/>
-    <LayoutHeader/>
-        <!-- 二级路由出口 -->
-    <RouterView />
-    
-    <LayoutFooter />
-
-  
-
-  </div>
-
-</template>
 <script setup>
 import LayoutNav from "@/views/Layout/components/LayoutNav.vue"
 import LayoutHeader from "@/views/Layout/components/LayoutHeader.vue"
@@ -27,7 +12,22 @@ const categoryStore = useCategoryStore()
 
 onMounted(() => 
   categoryStore.getCategory(),
-  console.log(categoryStore)
 )
-
 </script>
+<template>
+  <div>
+    <LayoutFixed />
+    <LayoutNav/>
+    <LayoutHeader/>
+        <!-- 二级路由出口 -->
+    <RouterView />
+    
+    <LayoutFooter />
+  </div>
+</template>
+<style scoped>
+div{
+  background:#fee7e796 ;
+}
+</style>
+
