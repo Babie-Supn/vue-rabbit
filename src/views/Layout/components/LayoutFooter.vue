@@ -1,5 +1,4 @@
 <script setup>
-name:'LayoutFooter'
 </script>
 <template>
   <footer class="app_footer">
