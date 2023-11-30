@@ -16,7 +16,7 @@
         </dl>
         <dl>
           <dt>下载APP</dt>
-          <dd class="qrcode"><img src="@/assets/img/code.png" ></dd>
+          <dd class="qrcode"><img src="@/assets/images/code.png" ></dd>
           <dd class="download">
             <span>扫描二维码</span>
             <span>立即下载App</span>
