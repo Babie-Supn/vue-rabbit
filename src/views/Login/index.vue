@@ -78,8 +78,8 @@ const doLogin = () => {
         </h1>
         <RouterLink class="entry" to="/">
           进入网站首页
-          <i class="iconfont icon-angle-right"></i>
-          <i class="iconfont icon-angle-right"></i>
+          <i class="iconfont icon-jiantouyou"></i>
+          <i class="iconfont icon-jiantouyou"></i>
         </RouterLink>
       </div>
     </header>

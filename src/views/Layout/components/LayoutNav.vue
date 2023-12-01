@@ -14,7 +14,7 @@ const confirm = () => {
     <div class="container">
       <ul>
         <template v-if="userStore.userInfo.token">
-          <li><a><i></i>{{ userStore.userInfo.nickname }}</a></li>
+          <li><a><i class="iconfont icon-yonghu"></i>{{ userStore.userInfo.nickname }}</a></li>
           <li>
           <el-popconfirm 
           title="确认退出吗？" 

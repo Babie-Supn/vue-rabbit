@@ -78,22 +78,22 @@ const addCart = () => {
                 <li>
                   <p>销量人气</p>
                   <p> {{ goods.salesCount }}+ </p>
-                  <p><i class="iconfont icon-task-filling"></i>销量人气</p>
+                  <p><i class="iconfont icon-renqi"></i>销量人气</p>
                 </li>
                 <li>
                   <p>商品评价</p>
                   <p>{{ goods.commentCount }}+</p>
-                  <p><i class="iconfont icon-comment-filling"></i>查看评价</p>
+                  <p><i class="iconfont icon-31daipingjia"></i>查看评价</p>
                 </li>
                 <li>
                   <p>收藏人气</p>
                   <p>{{ goods.collectCount }}+</p>
-                  <p><i class="iconfont icon-favorite-filling"></i>收藏商品</p>
+                  <p><i class="iconfont icon-shoucang"></i>收藏商品</p>
                 </li>
                 <li>
                   <p>品牌信息</p>
                   <p>{{ goods.brand.name }}</p>
-                  <p><i class="iconfont icon-dynamic-filling"></i>品牌主页</p>
+                  <p><i class="iconfont icon-pinpaitemai"></i>品牌主页</p>
                 </li>
               </ul>
             </div>
