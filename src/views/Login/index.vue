@@ -1,7 +1,11 @@
 <script setup>
 import {ref} from "vue"
+import { ElMessage } from "element-plus";
+import 'element-plus/theme-chalk/el-message.css'
+import { useRouter } from "vue-router"
+import {useUserStore} from '@/stores/user'
 
-
+const userStore=useUserStore()
 //表单校验（账户名+密码）
 
 //1.准备表单对象
@@ -36,15 +40,23 @@ const rules = {
   ]
 }
 
+//获取router实例对象
+const router = useRouter()
 //获取一个表单实例
 //3.获取form实例做统一校验
 const formRef = ref(null)
 const doLogin = () => {
+  const {account,password}=form.value
   //调用实例方法
-  formRef.value.validate((valid) => {
+  formRef.value.validate(async(valid) => {
     //valid代表所有表单都通过验证 才为true
     if (valid) {
-      
+      await userStore.getUserInfo({account,password})
+      //1.提示用户
+        ElMessage({type:'success',message:'登录成功'})
+      //2.跳转首页
+      //使用replace防止用户多次重复登录 push会保留登录页
+      router.replace({path: '/'})
     }
   })
 }
