@@ -4,6 +4,8 @@ import axios from "axios";
 //导入提示信息的样式
 import { ElMessage } from "element-plus";
 import "element-plus/theme-chalk/el-message.css";
+//获取pinia数据
+import { useUserStore } from "@/stores/user";
 
 const httpInstance = axios.create({
   baseURL: "http://pcapi-xiaotuxian-front-devtest.itheima.net",
@@ -15,6 +17,13 @@ const httpInstance = axios.create({
 //axios请求拦截器
 httpInstance.interceptors.request.use(
   (config) => {
+    //1.从pinia中获取token数据
+    const userStore = useUserStore();
+    const token = userStore.userInfo.token;
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    //2.按照后端的要求拼接token数据
     return config;
   },
   (e) => Promise.reject(e)
