@@ -6,6 +6,7 @@ import { ElMessage } from "element-plus";
 import "element-plus/theme-chalk/el-message.css";
 //获取pinia数据
 import { useUserStore } from "@/stores/user";
+import router from "@/router";
 
 const httpInstance = axios.create({
   baseURL: "http://pcapi-xiaotuxian-front-devtest.itheima.net",
@@ -33,11 +34,19 @@ httpInstance.interceptors.request.use(
 httpInstance.interceptors.response.use(
   (res) => res.data,
   (e) => {
+    const userStore = useUserStore();
     //统一错误提示
     ElMessage({
       type: "warning",
       message: e.response.data.message,
     });
+    //判断，如果是401 Token失效处理
+    //1. 清除本地用户处理
+    //2.跳转登录页
+    if (e.response.status === 401) {
+      userStore.clearUserInfo();
+      router.push("/login");
+    }
     return Promise.reject(e);
   }
 );
