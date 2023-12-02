@@ -1,5 +1,4 @@
 //封装购物车模块
-
 import { defineStore } from "pinia";
 import { computed, ref } from "vue";
 
@@ -39,6 +38,34 @@ export const useCartStore = defineStore(
     const allPrice = computed(() => {
       return cartList.value.reduce((i, c) => i + c.count * c.price, 0);
     });
+    //3.是否全选
+    const isAll = computed(() => {
+      return cartList.value.every((item) => item.selected);
+    });
+    //已选择数量
+    const selectedCount = computed(() => {
+      return cartList.value
+        .filter((item) => item.selected)
+        .reduce((a, c) => a + c.count, 0);
+    });
+    //已选择总价
+    const selectedPrice = computed(() => {
+      return cartList.value
+        .filter((item) => item.selected)
+        .reduce((a, c) => a + c.count * c.price, 0);
+    });
+
+    //切换单选功能
+    const singleCheck = (skuId, selected) => {
+      //通过skuId找到要修改的那一项
+      const item = cartList.value.find((item) => skuId === item.skuId);
+      item.selected = selected;
+    };
+    //全选功能
+    const allCheck = (selected) => {
+      //把cartList的每一项状态都变为selected
+      cartList.value.forEach((item) => (item.selected = selected));
+    };
 
     return {
       cartList,
@@ -46,6 +73,11 @@ export const useCartStore = defineStore(
       delCart,
       allCount,
       allPrice,
+      singleCheck,
+      isAll,
+      allCheck,
+      selectedCount,
+      selectedPrice,
     };
   },
   {

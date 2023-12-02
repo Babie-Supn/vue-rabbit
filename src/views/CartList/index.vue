@@ -9,7 +9,15 @@ const goHome = () => {
   router.push('/')
 }
 
-const cartList = []
+const singleCheck = (i,selected) => {
+  cartStore.singleCheck(i.skuId,selected)
+}
+const allCheck = (selected) => {
+  cartStore.allCheck(selected)
+}
+const delCart = (i) => {
+  cartStore.delCart(i.skuId)
+}
 
 </script>
 
@@ -21,7 +29,8 @@ const cartList = []
           <thead>
             <tr>
               <th width="120">
-                <el-checkbox/>
+                <!-- 全选 -->
+                <el-checkbox :model-value="cartStore.isAll" @change="allCheck"/>
               </th>
               <th width="400">商品信息</th>
               <th width="220">单价</th>
@@ -34,7 +43,8 @@ const cartList = []
           <tbody>
             <tr v-for="i in cartStore.cartList" :key="i.id">
               <td>
-                <el-checkbox />
+                <!-- 单选框 -->
+                <el-checkbox :model-value="i.selected" @change="(selected)=>singleCheck(i,selected)"/>
               </td>
               <td>
                 <div class="goods">
@@ -50,7 +60,7 @@ const cartList = []
                 <p>&yen;{{ i.price }}</p>
               </td>
               <td class="tc">
-                <el-input-number v-model="i.count" />
+                <el-input-number v-model="i.count" :min="1"/>
               </td>
               <td class="tc">
                 <p class="f16 red">&yen;{{ (i.price * i.count).toFixed(2) }}</p>
@@ -81,8 +91,8 @@ const cartList = []
       <!-- 操作栏 -->
       <div class="action">
         <div class="batch">
-          共 10 件商品，已选择 2 件，商品合计：
-          <span class="red">¥ {{ cartStore.allPrice }} </span>
+          共 {{ cartStore.allCount }} 件商品，已选择 {{ cartStore.selectedCount }} 件，商品合计：
+          <span class="red">¥ {{ cartStore.selectedPrice }} </span>
         </div>
         <div class="total">
           <el-button size="large" type="primary" >下单结算</el-button>
