@@ -4,7 +4,6 @@ import { useRouter } from "vue-router";
 
 const router = useRouter()
 const cartStore = useCartStore()
-console.log(cartStore.cartList)
 
 const settleCart = () => {
   router.push('/cartlist')

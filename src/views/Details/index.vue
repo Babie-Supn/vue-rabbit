@@ -9,6 +9,9 @@ import { useCartStore } from "@/stores/cartStore"
 const cartStore=useCartStore()
 const route = useRoute()
 const goods = ref({})
+
+
+
 const getGoodsDetail = async () => {
   const res = await getDetailAPI(route.params.id)
   goods.value = res.result
@@ -23,7 +26,7 @@ const skuChange = (sku) => {
 //购物数量
 const count = ref(1)
 const countChange = (count) => {
-   count.value=count
+   count =count
 }
 
 //添加购物车
@@ -123,7 +126,7 @@ const addCart = () => {
               <!-- sku组件 -->
               <XtxSku :goods="goods" @change="skuChange" />
               <!-- 数据组件 -->
-              <el-input-number v-model="count" @change="countChange" :min="1"/>
+              <el-input-number v-model="count" @change="countChange"  :min="1"/>
               <!-- 按钮组件 -->
               <div>
                 <el-button size="large" class="btn" @click="addCart">
