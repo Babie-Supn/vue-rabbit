@@ -10,7 +10,15 @@ const getPayInfo = async () => {
    payInfo.value = res.result
 }
 
-onMounted(()=>getPayInfo())
+onMounted(() => getPayInfo())
+
+//跳转支付
+//携带订单id以及回调地址跳转到支付地址（get）
+const baseURL = 'http://pcapi-xiaotuxian-front-devtest.itheima.net/'
+const backURL = 'http://127.0.0.1:5173/paycallback'
+const redirectUrl = encodeURIComponent(backURL)
+const payUrl = `${baseURL}pay/aliPay?orderId=${route.query.id}&redirect=${redirectUrl}`
+
 </script>
 
 
@@ -19,7 +27,7 @@ onMounted(()=>getPayInfo())
     <div class="container">
       <!-- 付款信息 -->
       <div class="pay-info">
-        <span class="icon iconfont icon-queren2"></span>
+        <span class="icon iconfont icon-chenggong"></span>
         <div class="tip">
           <p>订单提交成功！请尽快完成支付。</p>
           <p>支付还剩 <span>24分30秒</span>, 超时后将取消订单</p>
