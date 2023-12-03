@@ -30,3 +30,18 @@ export const delCartAPI = (ids) => {
     },
   });
 };
+
+/**
+ * 合并购物车
+ * data:{
+ *   skuId,
+     selected,
+     count}
+*/
+export const mergeCartAPI = (data) => {
+  return httpInstance({
+    url: "/member/cart/merge",
+    method: "POST",
+    data,
+  });
+};
