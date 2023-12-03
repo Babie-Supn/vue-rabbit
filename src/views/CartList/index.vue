@@ -95,7 +95,7 @@ const delCart = (i) => {
           <span class="red">¥ {{ cartStore.selectedPrice }} </span>
         </div>
         <div class="total">
-          <el-button size="large" type="primary" >下单结算</el-button>
+          <el-button size="large" type="primary" @click="$router.push('/checkout')">下单结算</el-button>
         </div>
       </div>
     </div>
