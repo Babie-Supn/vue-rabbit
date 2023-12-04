@@ -11,3 +11,13 @@ export const loginAPI = ({ account, password }) => {
     },
   });
 };
+
+//获取猜你喜欢的数据
+export const getLikeListAPI = ({ limit = 4 }) => {
+  return httpInstance({
+    url: "/goods/relevant",
+    params: {
+      limit,
+    },
+  });
+};
