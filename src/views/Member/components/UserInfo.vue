@@ -25,15 +25,15 @@ onMounted(()=>getLikelist())
     </div>
     <div class="item">
       <a href="javascript:;">
-        <span class="iconfont icon-hy"></span>
+        <span class="iconfont icon-huiyuan"></span>
         <p>会员中心</p>
       </a>
       <a href="javascript:;">
-        <span class="iconfont icon-aq"></span>
+        <span class="iconfont icon-anquanshezhi"></span>
         <p>安全设置</p>
       </a>
       <a href="javascript:;">
-        <span class="iconfont icon-dw"></span>
+        <span class="iconfont icon-dizhiguanli"></span>
         <p>地址管理</p>
       </a>
     </div>
