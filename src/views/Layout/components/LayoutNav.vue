@@ -67,4 +67,4 @@ const confirm = () => {
   padding: 5px;
 }
 
-</style>@/stores/userStore
+</style>
